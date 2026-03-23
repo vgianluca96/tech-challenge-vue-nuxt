@@ -11,7 +11,21 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      backendUrl: process.env.BACKEND_URL || 'http://localhost:3000'
+      backendUrl: process.env.BACKEND_URL || '/api'
+    }
+  },
+
+  // Add proxy configuration
+  nitro: {
+    devProxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        prependPath: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
     }
   },
 
