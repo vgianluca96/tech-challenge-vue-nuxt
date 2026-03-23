@@ -8,7 +8,7 @@ This is the frontend of the Tech Challenge Project.
 * run `npm install`
 * set the .env file as follows
 
-```
+```bash
 BACKEND_URL=<URL of the Gateway app>
 ```
 
